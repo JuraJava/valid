@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+
+    <meta charset="UTF-8">
+    <title>Client Form</title>
+    <style>
+        .error {
+           color: red;
+        }
+    </style>
+
+</head>
+<body>
+
+Fill the form. Enter data in required fields.
+<br><br>
+<!--Это чтобы между полями была пустая строка и -->
+<!--чтобы поля не шли в строчку одно за другим-->
+
+<form th:action="@{/processForm}" th:object="${client}" method="post">
+
+    First name: <input type="text" th:field="*{firstName}">
+    <br><br>
+    Last name*: <input type="text" th:field="*{lastName}">
+    <!--    Помечено * т.к. поле обязательно к заполнению-->
+    <span th:if="${#fields.hasErrors('lastName')}"
+          th:errors="${client.lastName}"
+          class = "error">
+
+    </span>
+
+    <br><br>
+    <input type="submit">
+
+</form>
+
+</body>
+</html>
