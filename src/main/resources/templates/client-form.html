@@ -35,6 +35,15 @@ Fill the form. Enter data in required fields.
           class = "error">
 
     </span>
+    <br><br>
+    Age*: <input type="text" th:field="*{age}">
+    <!--    Помечено * т.к. поле обязательно к заполнению-->
+
+    <span th:if="${#fields.hasErrors('age')}"
+          th:errors="${client.age}"
+          class = "error">
+
+    </span>
 
     <br><br>
     <input type="submit">
