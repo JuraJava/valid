@@ -24,6 +24,12 @@ Fill the form. Enter data in required fields.
     <br><br>
     Last name*: <input type="text" th:field="*{lastName}">
     <!--    Помечено * т.к. поле обязательно к заполнению-->
+
+<!--    Когда мы запускаем наше приложение у нас отображается всё кроме -->
+<!--    того что расположено между открывающим и закрывающим тегами span-->
+<!--    А если у нас данные не прошли валидацию, то срабатывает то что-->
+<!--    расположено между открывающим и закрывающим тегами span-->
+
     <span th:if="${#fields.hasErrors('lastName')}"
           th:errors="${client.lastName}"
           class = "error">
@@ -32,6 +38,9 @@ Fill the form. Enter data in required fields.
 
     <br><br>
     <input type="submit">
+
+<!--    После введения данных на форме и нажатия на кнопку Submit-->
+<!--    нас перекидывает в браузере со страницы /client на страницу /processForm-->
 
 </form>
 
