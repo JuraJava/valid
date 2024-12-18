@@ -46,6 +46,16 @@ Fill the form. Enter data in required fields.
     </span>
 
     <br><br>
+    Zip code: <input type="text" th:field="*{zipCode}">
+    <!--    Помечено * т.к. поле обязательно к заполнению-->
+
+    <span th:if="${#fields.hasErrors('zipCode')}"
+          th:errors="${client.zipCode}"
+          class = "error">
+
+    </span>
+
+    <br><br>
     <input type="submit">
 
 <!--    После введения данных на форме и нажатия на кнопку Submit-->
