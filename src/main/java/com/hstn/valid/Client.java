@@ -13,9 +13,10 @@ public class Client {
     // выводит сообщение если введено неправильно
     private String lastName;
 
+    @NotNull(message = "Enter age.")
     @Min(value = 18, message = "You must be older then 17.")
     @Max(value = 125, message = "You must be younger then 126.")
-    private int age;
+    private Integer age;
 
     @NotNull
     @Pattern(regexp = "^[0-9]{5}", message = "Enter valid zipCode. Only numbers, 5 digit.")
@@ -28,7 +29,6 @@ public class Client {
     // цифры от 0 до 9 и таких цифр должно быть 5.
     // А чтобы пользователь не оставлял поле пустым, кроме того
     // это поле необходимо пометить аннотацией @NotNull
-
     private String zipCode;
 
     public String getFirstName() {
@@ -47,11 +47,11 @@ public class Client {
         this.lastName = lastName;
     }
 
-    public int getAge() {
+    public Integer getAge() {
         return age;
     }
 
-    public void setAge(int age) {
+    public void setAge(Integer age) {
         this.age = age;
     }
 

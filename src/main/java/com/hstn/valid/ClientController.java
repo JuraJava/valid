@@ -30,6 +30,7 @@ public class ClientController {
 
     @PostMapping("/processForm")
     public String processForm(@Valid @ModelAttribute("client") Client client, BindingResult bindingResult) {
+        System.out.println(bindingResult);
 //  При переходе в браузере со страницы /client на страницу /processForm
 //  происходит валидация введённых пользователем данных. Каких?
 //  Которые указаны в параметрах аннотации @ModelAttribute, т.е. данные введённые
