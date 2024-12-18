@@ -1,5 +1,6 @@
 package com.hstn.valid;
 
+import com.hstn.valid.validation.CarNumber;
 import jakarta.validation.constraints.*;
 
 public class Client {
@@ -31,6 +32,10 @@ public class Client {
     // это поле необходимо пометить аннотацией @NotNull
     private String zipCode;
 
+    @CarNumber(value = "ENG", message = "Number must be from England!")
+    //  Это созданная нами ранее аннотация
+    private String carNumber;
+
     public String getFirstName() {
         return firstName;
     }
@@ -61,5 +66,13 @@ public class Client {
 
     public void setZipCode(String zipCode) {
         this.zipCode = zipCode;
+    }
+
+    public String getCarNumber() {
+        return carNumber;
+    }
+
+    public void setCarNumber(String carNumber) {
+        this.carNumber = carNumber;
     }
 }

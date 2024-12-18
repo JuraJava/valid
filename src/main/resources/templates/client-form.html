@@ -33,8 +33,8 @@ Fill the form. Enter data in required fields.
     <span th:if="${#fields.hasErrors('lastName')}"
           th:errors="${client.lastName}"
           class = "error">
-
     </span>
+
     <br><br>
     Age*: <input type="text" th:field="*{age}">
     <!--    Помечено * т.к. поле обязательно к заполнению-->
@@ -42,17 +42,24 @@ Fill the form. Enter data in required fields.
     <span th:if="${#fields.hasErrors('age')}"
           th:errors="${client.age}"
           class = "error">
-
     </span>
-    <br><br>
 
+    <br><br>
     Zip code: <input type="text" th:field="*{zipCode}">
     <!--    Помечено * т.к. поле обязательно к заполнению-->
 
     <span th:if="${#fields.hasErrors('zipCode')}"
           th:errors="${client.zipCode}"
           class = "error">
+    </span>
 
+    <br><br>
+    Car number: <input type="text" th:field="*{carNumber}">
+    <!--    Помечено * т.к. поле обязательно к заполнению-->
+
+    <span th:if="${#fields.hasErrors('carNumber')}"
+          th:errors="${client.carNumber}"
+          class = "error">
     </span>
 
     <br><br>

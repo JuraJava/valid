@@ -15,6 +15,10 @@ public class CarNumberValidator implements ConstraintValidator<CarNumber, String
     @Override
     public boolean isValid(String carNumber, ConstraintValidatorContext constraintValidatorContext) {
         // В этом методе проходит проверка валидации поля carNumber
+        if (carNumber == null) {
+            return false;
+        }
+        carNumber = carNumber.toUpperCase();
         boolean result = carNumber.endsWith(countryCode);
         return result;
     }
